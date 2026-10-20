@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Barry Carroll, a software developer in Kildare, Ireland.">
+<title>Barry Carroll</title>
+<style>
+/* Layout: one narrow column, photo beside the name on wide screens, stacked on phones */
+:root {
+  --bg: #f5f7f6;
+  --fg: #19231f;
+  --muted: #55645d;
+  --line: #d5ded9;
+  --accent: #1f6b4a;
+  --photo-bg: #dbe6e0;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101714; --fg: #e8efeb; --muted: #9db0a6; --line: #26332d;
+    --accent: #6fcf9f; --photo-bg: #1b2822;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font: 17px/1.6 var(--sans);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px;
+}
+.wrap { max-width: 640px; margin: 0 auto; display: grid; gap: 40px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.mark { font-family: var(--serif); font-size: 1.25rem; font-weight: 500; letter-spacing: .01em; }
+.intro { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; }
+@media (min-width: 560px) { .intro { grid-template-columns: 200px 1fr; gap: 36px; } }
+.photo { aspect-ratio: 1; max-width: 200px; width: 100%; border-radius: 50%; background: var(--photo-bg); display: grid; place-items: center; overflow: hidden; }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+h1 { font: 400 clamp(2.2rem, 7vw, 3.1rem)/1.1 var(--serif); margin: 0 0 8px; text-wrap: balance; }
+.where { color: var(--muted); margin: 0; }
+section { display: grid; gap: 12px; }
+h2 { font: 600 .8rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0; }
+p { margin: 0; max-width: 65ch; }
+.cards { display: grid; gap: 12px; }
+.link { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; padding: 14px 0; border-top: 1px solid var(--line); text-decoration: none; color: inherit; }
+.link:last-child { border-bottom: 1px solid var(--line); }
+.link b { font-weight: 600; color: var(--accent); }
+.link span { color: var(--muted); font-size: .95rem; text-align: right; min-width: 0; }
+footer { color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <span class="mark">barryc.ie</span>
+  </header>
+
+  <div class="intro">
+    <div class="photo">
+      <img src="photo.webp" width="800" height="800" alt="Barry Carroll carving a wooden spoon in his workshop" fetchpriority="high">
+    </div>
+    <div>
+      <h1>Hi, I'm Barry Carroll.</h1>
+      <p class="where">Kildare, Ireland</p>
+    </div>
+  </div>
+
+  <section>
+    <h2>About me</h2>
+    <p>I'm a software developer living in Kildare, and in my spare time I like to carve, mostly spoons. I'm not much of a one for social media, so this is just a place to say hello.</p>
+  </section>
+
+  <section>
+    <h2>What I'm working on</h2>
+    <p><em>Ah, lovely!</em> is a directory of gifts made in Ireland by people who make them. I find makers, check where they're made, and link to their shop. If I've emailed you about it, reply any time, or just say no thanks and I won't write again.</p>
+    <div class="cards">
+      <a class="link" href="https://ahlovely.ie" rel="noopener"><b>ahlovely.ie</b><span>Gifts made in Ireland</span></a>
+      <a class="link" href="https://baz8080.github.io" rel="noopener"><b>baz8080.github.io</b><span>Open source projects</span></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Get in touch</h2>
+    <p>Email is best, and either address below reaches me. The corporate version of me is on LinkedIn, looking a bit smarter.</p>
+    <div class="cards">
+      <div class="link"><b>Email</b><span>hello@barryc.ie<br>hello@ahlovely.ie</span></div>
+      <a class="link" href="https://www.linkedin.com/in/barrymcarroll" rel="noopener"><b>LinkedIn</b><span>linkedin.com/in/barrymcarroll</span></a>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 Barry Carroll. No cookies and no popup asking you to accept them.<br>The site only collects basic, privacy-first visit counts.</footer>
+</div>
+</body>
+</html>
