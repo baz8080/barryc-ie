@@ -27,29 +27,30 @@
 * { box-sizing: border-box; }
 body {
   background: var(--bg); color: var(--fg);
-  font: 17px/1.6 var(--sans);
+  font: 16px/1.5 var(--sans);
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 20px 48px;
+  padding-block: 12px 32px;
 }
-.wrap { max-width: 640px; margin: 0 auto; display: grid; gap: 40px; }
-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.wrap { max-width: 640px; margin: 0 auto; display: grid; gap: 24px; }
+header { display: flex; align-items: center; }
 .mark { font-family: var(--serif); font-size: 1.25rem; font-weight: 500; letter-spacing: .01em; }
-.intro { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; }
+.intro { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center; }
 @media (min-width: 560px) { .intro { grid-template-columns: 200px 1fr; gap: 36px; } }
-.photo { aspect-ratio: 1; max-width: 200px; width: 100%; border-radius: 50%; background: var(--photo-bg); display: grid; place-items: center; overflow: hidden; }
+.photo { aspect-ratio: 1; width: 100%; border-radius: 50%; background: var(--photo-bg); display: grid; place-items: center; overflow: hidden; }
 .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-h1 { font: 400 clamp(2.2rem, 7vw, 3.1rem)/1.1 var(--serif); margin: 0 0 8px; text-wrap: balance; }
+h1 { font: 400 clamp(1.6rem, 7vw, 3.1rem)/1.1 var(--serif); margin: 0 0 4px; text-wrap: balance; }
 .where { color: var(--muted); margin: 0; }
-section { display: grid; gap: 12px; }
+section { display: grid; gap: 8px; }
 h2 { font: 600 .8rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0; }
 p { margin: 0; max-width: 65ch; }
-.cards { display: grid; gap: 12px; }
-.link { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; padding: 14px 0; border-top: 1px solid var(--line); text-decoration: none; color: inherit; }
+.cards { display: grid; }
+.link { display: flex; justify-content: space-between; gap: 16px; align-items: center; min-height: 44px; padding: 8px 0; border-top: 1px solid var(--line); text-decoration: none; color: inherit; }
 .link:last-child { border-bottom: 1px solid var(--line); }
+@media (hover: hover) { .link:hover span { color: var(--fg); } }
 .link b { font-weight: 600; color: var(--accent); }
 .link span { color: var(--muted); font-size: .95rem; text-align: right; min-width: 0; }
-footer { color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); padding-top: 16px; }
+footer { color: var(--muted); font-size: .75rem; }
 </style>
 </head>
 <body>
@@ -87,12 +88,13 @@ footer { color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line
     <h2>Get in touch</h2>
     <p>Email is best, and either address below reaches me. The corporate version of me is on LinkedIn, looking a bit smarter.</p>
     <div class="cards">
-      <div class="link"><b>Email</b><span>hello@barryc.ie<br>hello@ahlovely.ie</span></div>
+      <a class="link" href="mailto:hello@barryc.ie"><b>Email (here)</b><span>hello@barryc.ie</span></a>
+      <a class="link" href="mailto:hello@ahlovely.ie"><b>Email (Ah, lovely!)</b><span>hello@ahlovely.ie</span></a>
       <a class="link" href="https://www.linkedin.com/in/barrymcarroll" rel="noopener"><b>LinkedIn</b><span>linkedin.com/in/barrymcarroll</span></a>
     </div>
   </section>
 
-  <footer>&copy; 2026 Barry Carroll. No cookies and no popup asking you to accept them.<br>The site only collects basic, privacy-first visit counts.</footer>
+  <footer>&copy; 2026 Barry Carroll.<br>No cookies and no popup asking you to accept them.<br>The site only collects basic, privacy-first visit counts.</footer>
 </div>
 </body>
 </html>
